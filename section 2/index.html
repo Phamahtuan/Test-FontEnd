@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <div class="title">
+            <h1>Floral & Decor</h1>
+        </div>
+        <div class="tbale-layout">
+            <div class="table">
+                <img class="img-layout" src="img/logo1.jpg" alt="">
+                
+                <div class="tabs">
+                    <div class="tab-item active">
+                       Floral
+                        <i class="tab-icon fa-solid fa-chevron-up fa-rotate-180"></i>
+                        <div class="tab-pane">
+                            <p>Borem ipsum dolor sit amet consectetur adipisicing elit. Repellat modi dolore consequuntur mollitia perferendis? Deleniti iure illo quae inventore, sint vel. Quaerat eos beatae dicta, est ipsam hic possimus quae.</p>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        Decor selection
+                        <i class="tab-icon fa-solid fa-chevron-up fa-rotate-180"></i>
+                        <div class="tab-pane ">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat modi dolore consequuntur mollitia perferendis? Deleniti iure illo quae inventore, sint vel. Quaerat eos beatae dicta, est ipsam hic possimus quae.</p>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        Hair & makeup
+                        <i class="tab-icon fa-solid fa-chevron-up fa-rotate-180"></i>
+                        <div class="tab-pane">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat modi dolore consequuntur mollitia perferendis? Deleniti iure illo quae inventore, sint vel. Quaerat eos beatae dicta, est ipsam hic possimus quae.</p>
+                        </div>
+                    </div>
+                    <div class="tab-item">
+                        Lighting & Sound
+                        <i class="tab-icon fa-solid fa-chevron-up fa-rotate-180"></i>                      
+                        <div class="tab-pane ">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat modi dolore consequuntur mollitia perferendis? Deleniti iure illo quae inventore, sint vel. Quaerat eos beatae dicta, est ipsam hic possimus quae.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div>
+                    <img class="img-layout-pane" src="img/logo2.jpg" alt="">
+                </div>
+      </div>
+    <script>
+    const $ = document.querySelector.bind(document)
+    const $$= document.querySelectorAll.bind(document)
+
+  
+    const tabs = $$('.tab-item')
+    const panes = $$('.tab-pane') 
+
+    tabs.forEach((tab, index) => {
+    const pane = panes[index];
+    let isActive = pane.classList.contains('active'); 
+  
+    tab.onclick = function() {
+        if (isActive) {
+    pane.style.display = 'none';
+    pane.classList.remove('active');
+    tab.classList.remove('active');
+    isActive = false; 
+       } else {
+    panes.forEach((p) => {
+    p.style.display = 'none';
+    p.classList.remove('active');
+    });
+      
+    tabs.forEach((t) => {
+       t.classList.remove('active');
+    });
+      
+    pane.style.display = 'block';
+    pane.classList.add('active');
+    tab.classList.add('active');
+    isActive = true;
+    }
+  };
+});
+    </script>
+</body>
+</html>
